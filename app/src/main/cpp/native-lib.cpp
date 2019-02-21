@@ -125,8 +125,8 @@ Java_frank_com_ffmpegdemo_XPlay_Open(JNIEnv *env, jobject instance, jstring url_
     //打开视频频解码器
     //软解码器
     AVCodec *codec = avcodec_find_decoder(ic->streams[videoStream]->codecpar->codec_id);
-    //硬解码
-    codec = avcodec_find_decoder_by_name("h264_mediacodec");
+    //硬解码(虚拟使用不了)
+//    codec = avcodec_find_decoder_by_name("h264_mediacodec");
     if (!codec) {
         LOGW("avcodec find failed!");
         return;
